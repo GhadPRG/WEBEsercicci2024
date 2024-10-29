@@ -1,6 +1,4 @@
 const operatori = document.getElementById("operatori");
-
-
 const nameAndInfoForOperator = [
     {
         name: "Breach",
@@ -60,9 +58,9 @@ const nameAndInfoForOperator = [
 
 for(let i=0; i<nameAndInfoForOperator.length; i++){
     HTMLString= `
-        <div class="row border rounded my-1">
-            <div class="col">
-                <img src="/image/Operatori/${nameAndInfoForOperator[i].name}.webp" class="rounded-4 mx-auto d-block" alt="brimstone"  width="50%" height="100%">
+        <div class="row border rounded my-1" style="background-color: azure">
+            <div class="col-sm-5 py-2 my-auto">
+                <img src="/image/Operatori/${nameAndInfoForOperator[i].name}.webp" class="rounded-4 py-auto mx-auto d-block" width="35%" height="90%">
             </div>
             <div class="col my-auto">
                 <h1 style="text-align: center">${nameAndInfoForOperator[i].name}</h1>
