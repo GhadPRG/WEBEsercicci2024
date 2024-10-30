@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
     <link rel="stylesheet" href="/css/styles.css">
@@ -24,7 +27,7 @@
                 <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Dati</a>
+                <a class="nav-link active" href="#">VALORANT Points</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contattaci.html">Contattaci</a>
@@ -47,13 +50,14 @@
         <div class="row ">
             <div class="col align-items-center">
                 <p class="mb-1">Inserisci qui la quantità di soldi che vorresti spendere su questo gioco:</p>
-                <label>
-                    <input type="number" min="0" placeholder="SSSSSSSSSSOLDI"/>
-                </label>
+                    <label for="moneyField"></label><input id="moneyField" type="number" min="0" placeholder="SSSSSSSSSSOLDI" oninput="validity.valid||(value='');"/>
+                    <input id="convertButton" type="button" value="Converti">
                 <p class="mt-1">Tranquillo, non ruberò soldi dalla tua carta.<br>Appena Ianni mi spiegherà come poterlo fare, giuro che ci proverò.</p>
 
             </div>
-            <div id="outputVPoints" class="col"></div>
+            <div  class="col align-self-center ">
+                <div id="outputVPoints" ></div>
+            </div>
         </div>
     </div>
 
@@ -61,6 +65,7 @@
         Sfortunatamente, Valorant non ci permette di comprare la sua valuta di gioco singolarmente (la valuta si chiama VALORANT Point).<br>
         Ci mette però a disposizione dei pacchetti da usare per poter comprare un certo numero di VPoint. In linea di massima, i prezzi sono questi:
     </h6>
+
     <table class="table" style="text-align:center;" data-index-number="10">
         <tbody><tr>
             <th>Cost
@@ -115,10 +120,44 @@
             </td>
         </tr></tbody></table>
 
+    <h6 class="p-3 text-center">
+        Dopo aver visto quanto costano i VALORANT Points, ed aver convertito i tuoi soldi reali in valuta del gioco, puoi inserire nella tabella qua sotto gli elementi che puoi permetterti.
+    </h6>
+
+    <div id="skinsOutput" class="d-flex justify-content-center align-content-start flex-wrap px-3 gap-3">
+
+    </div>
 
 
+    <table id="tableSkins" class="table"  style="text-align:center;">
+        <thead>
+        <tr>
+            <th scope="col">Skin Name</th>
+            <th scope="col">Skin Price</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
 
+    </table>
 
+    <div id="totalSkins" class="text-center"></div>
+    <div id="budgetSkins" class="text-center"></div>
 
+    <div class="container-fluid">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-black bg-opacity-10">
+            <div class="col-md-4 d-flex align-items-center">
+
+                <span class="mb-3 mb-md-0 px-2 text-body-secondary">Made with {Bestemmie} by <br>Giovanni Muraca</span>
+            </div>
+        </footer>
+    </div>
 </body>
+
+
+
+
+
+
+
+<script src="js/vpointsScript.js"></script>
 </html>
