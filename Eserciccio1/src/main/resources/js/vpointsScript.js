@@ -149,6 +149,7 @@ window.onclick = e => {
         total += Number(v.price);
 
         updateText(total, budget);
+        document.getElementById("tab"+e.target.id).scrollIntoView();
 
     }
 

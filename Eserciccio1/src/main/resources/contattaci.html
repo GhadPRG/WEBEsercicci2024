@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 
 </head>
-<body>
+<body class="d-flex flex-column vh-100">
     <header>
         <div class="navPersonal">
             <ul class="nav nav-tabs nav-justified">
@@ -38,7 +38,94 @@
     </header>
 
 
-    <p>Vuoi inviarmi un messaggio o mandarmi brutte parole perchè ti ho fatto appena scoprire la tua condanna? Puoi farlo, da qua sotto!!</p>
+
+
+    <h3 class="text-center p-5">Vuoi inviarmi un messaggio o mandarmi brutte parole perchè ti ho fatto appena scoprire la tua condanna? <br>Puoi farlo, da qua sotto!!</h3>
+
+
+    <form class="needs-validation" novalidate>
+        <div class="border mx-5">
+        <div class="row px-5 pt-4">
+            <div class="col">
+                <label for="name">Nome:</label>
+                <input id="name" type="text" class="form-control" placeholder="Nome" required>
+                <div class="valid-feedback">
+                    Bel nome!
+                </div>
+                <div class="invalid-feedback">
+                    Non vergognarti.. DIMMI COME TI CHIAMI!
+                </div>
+            </div>
+            <div class="col">
+                <label for="surname">Cognome:</label>
+                <input id="surname" type="text" class="form-control" placeholder="Cognome" required>
+                <div class="valid-feedback">
+                    Hai anche un bel cognome, WOW!
+                </div>
+                <div class="invalid-feedback">
+                    Non vergognarti.. DIMMI IL COGNOME!
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="email">email:</label>
+                <input id="email" type="email" class="form-control" placeholder="Email" required>
+                <div class="invalid-feedback">
+                    Inserisci un email valida. PEFFORZA
+                </div>
+            </div>
+
+            <div class="form-group pt-3">
+                <label for="message">Scrivi qui il tuo messaggio:</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Caro Giovanni..."></textarea>
+            </div>
+        </div>
+
+            <div class="form-check px-5 py-2">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Accetta i <a href="segreto.html">termini e condizioni d'uso</a>
+                        </label>
+                    <div class="invalid-feedback">
+                            Devi accettare i termini prima di inviare il messaggio.
+                    </div>
+
+                <div class="row p-3 mx-5">
+                    <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                let forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                let validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+
+    <div class="py-4"></div>
+    <footer class="bg-body-tertiary text-center text-lg-start mt-auto">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            Made with {Bestemmie} by <br>Giovanni Muraca
+        </div>
+    </footer>
 
 </body>
 </html>
