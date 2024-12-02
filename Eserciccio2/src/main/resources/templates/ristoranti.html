@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Ristoranti</title>
+</head>
+<body>
+<h1>Lista Ristoranti</h1>
+<h3>Qui è presente una lista di ristoranti</h3>
+<ul>
+    <li th:each="ristorante : ${ristoranti}">
+        <span th:text="${ristorante.nome}"></span>
+    </li>
+</ul>
+
+<h2>Lista Piatti</h2>
+
+<h3>Qui è presente una lista di Piatti (caricata tramite proxy)</h3>
+<ul>
+    <li th:each="piatto : ${piatti}">
+        <span th:text="${piatto.nome}"></span>
+    </li>
+</ul>
+
+
+<h2>E qui son presenti i piatti che hanno i ristoranti (relazione molti a molti)</h2>
+<ul>
+    <!-- Itera sulla mappa dei ristoranti -->
+    <li th:each="entry : ${ristorantiPiatti}">
+        <!-- Nome del ristorante (chiave della mappa) -->
+        <h3 th:text="${entry.key}">Ristorante Nome</h3>
+
+        <!-- Itera sulla lista dei piatti (valore della mappa) -->
+        <ul>
+            <li th:each="piatto : ${entry.value}" th:text="${piatto}">Piatto Nome</li>
+        </ul>
+    </li>
+</ul>
+
+<form th:action="@{/logout}">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
